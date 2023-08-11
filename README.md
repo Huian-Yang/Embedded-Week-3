@@ -48,3 +48,21 @@ $u(t) = K_d(e(t)\frac{d}{dt}) \to u(t) = 4.2(2.48) = 10.416$
 The derivative has set our output to be 10.416. Derivative is meant to dampen a PID controller. If the error is moving toward zero, the derivative will add a component to make the error grow, and if the error is growing its component will make it move toward zero. It effectively dampens change.
 
 # Exercise #1
+
+For this exercise, we'll be writing a PID class. There is some starter code, but you'll be implementing the things you've learned above yourself. You have full freedom to change anything in the PID.h and PID.cpp sections, but not the main.cpp section, as thats the autograder. Of course you can add prints in the main as you'd like, and modify the debug flag in main.
+
+### Integral Calculation
+
+If you've taken calc, you probably know about Riemann (Ree-mon) sums. Riemann sums are how we calculate integrals in code. While data in the real world is fluid, code is not, code, however, can get pretty close if the time interval is small enough. What we get from this is a series of points that describe the curve.
+
+![](assets/week3_3.png)
+
+Imagine this is a graph of error. What we are showing here is a Right-Hand Riemann sum. This is how we recommend you implement integral calculations (as its pretty simple), but you can do it in other ways. You can experiment with this data set here: [Rieman Sum Simulator](https://www.desmos.com/calculator/kye17rgo1b)
+
+### Derivative Calculations
+
+The way we do derivatives is also the same way we do derivative in calc. A derivative is the slope between two points, where the dt is a limit to infinity. In our case, with code, the dt is simply as fast as we get data, which gets us pretty close. If you'd like to experiment with how the dt changes the results, I have another desmos sim here: [Derivatives Approximation](https://www.desmos.com/calculator/yhwf0jrps8). It uses the same data as the integral sim.
+
+![](assets/week3_4.png)
+
+Between each data point, you see the yellow slope line and the two blue component lines. for PID, we consider the dE at each point as the slope of the line leading to it. The dE at the green marked point would be the slope between the two marked points.

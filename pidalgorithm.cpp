@@ -18,8 +18,10 @@ public:
 private:
     
     double kP, kI, kD; //constants 
+
     long lastTime; //timestamp of the previous time
-    double sumError;
+    double lastError; //error of previous frame
+    double sumError; //integral of error
     
     double calculateP(double error); 
     double calculateI(double error);
@@ -79,15 +81,18 @@ double PIDClass::calculate(double error){
     double result = calculateP(error) + calculateI(error) + calculateD(error);
     
     lastTime = /*set lastTime*/;
+    lastError = /*set lastError*/;
 
     return result;
 }
 
 ///////////////
-//main.cpp // DO NOT EDIT BELOW
+//main.cpp // DO NOT EDIT PERMANENTLY BELOW
 ///////////////
 
 //#include "PID.cpp" //not neccessary here again as we are using one file for everything.
+
+bool debug = true;
 
 int main(){
     PIDClass testP(3.2,0,0);
@@ -96,15 +101,17 @@ int main(){
     
     PIDClass testAll(3.2,2.1,4.2);
     
-    double errors[5] = {12.4,10.5,10.2,11.5,19.2};
+    double errors[25] = {1.34,1.144,0.838,0.425,-0.037,-0.454,-0.751,-0.917,-0.985,-1,-0.993,-0.961,-0.919,-0.838,-0.713,-0.562,-0.408,-0.269,-0.15,-0.052,0.029,0.095,0.151,0.198};
     
-    for(int i = 0; i < 5; i ++){
-        printf("Results at time %d: P: %f, I: %f D: %f All: %f\n", t,
-            testP.calculate(errors[i]),
-            testI.calculate(errors[i]),
-            testD.calculate(errors[i]),
-            testAll.calculate(errors[i])
-            );
+    for(int i = 0; i < 25; i ++){
+        if(debug){
+            printf("Results at time %d: P: %f, I: %f D: %f All: %f\n", t,
+                testP.calculate(errors[i]),
+                testI.calculate(errors[i]),
+                testD.calculate(errors[i]),
+                testAll.calculate(errors[i])
+                );
+        }
         t++;
     }
 }
