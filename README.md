@@ -4,7 +4,7 @@ PID is the controller we use for a lot of the systems on our robot. The main con
 
 This is the underlying equation behind PID, and over the course of this week we will be teaching you what each component means
 
-$u(t) = K_p(e(t)) + K_i\int^t_0{e(\tau)d\tau}~+ K_d(e(t)\frac{d}{dt})$
+$u(t) = K_p\cdot e(t) + K_i\cdot\int^t_0{e(\tau)d\tau}~+ K_d\cdot e(t)\frac{d}{dt}$
 
 *where e(t) is the error at time t, and u(t) is the output of the PID controller*
 
