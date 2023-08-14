@@ -12,7 +12,7 @@ long us_ticker_read_test(){
 class PIDClass{
 public:
     
-    PIDClass(double kP, double ki, double kD);
+    PIDClass(double kP, double kI, double kD);
     double calculate(double error);
     
 private:
