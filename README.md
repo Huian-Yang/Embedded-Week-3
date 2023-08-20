@@ -49,7 +49,7 @@ The derivative has set our output to be 10.416. Derivative is meant to dampen a 
 
 # Exercise #1
 
-For this exercise, we'll be writing a PID class. There is some [starter code](https://github.com/Triton-Robotics-Training/Week-3/blob/main/pidalgorithm.cpp), but you'll be implementing the things you've learned above yourself. You have full freedom to change anything in the PID class sectionc, but not the main section, as thats the autograder. Of course you can add prints in the main as you'd like, and modify the debug flag in main.
+For this exercise, we'll be writing a PID class. There is some [starter code](https://github.com/Triton-Robotics-Training/Week-3/blob/main/pidalgorithm.cpp), but you'll be implementing the things you've learned above yourself. You have full freedom to change anything in the PID class sectionc, but not the main section, as thats the autograder. Of course you can add prints in the main as you'd like, and modify the debug flag in main. We have a set of [known correct outputs](pidCorrectOutputs.md), which is helpful for debugging, but know that differences from these do not necessarily mean that you are incorrect. 
 
 ### Integral Calculation
 

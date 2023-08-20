@@ -60,6 +60,6 @@ Results at time 24: P: 0.633600, I: -12.572700 D: 0.197400 All: -11.741700
 Results at time 25: P: 0.000000, I: -12.156900 D: -0.831600 All: -12.988500
 ```
 
-They are so different because these time intervals are so large, but in a case where the data is more fluid, and there are more data points per second, the difference between these two would be subtstantially smaller. You can experiment with this exact data set here: [Rieman Sum Simulator](https://www.desmos.com/calculator/kye17rgo1b)
+They are so different because these time intervals are so large, but in a case where the data is more fluid, and there are more data points per second, the difference between these two types of riemann calculation would be subtstantially smaller. You can experiment with this exact data set here: [Rieman Sum Simulator](https://www.desmos.com/calculator/kye17rgo1b)
 
 If you happen to do a trapezoidal Riemann sum, the Integral would be the average of these two values.
