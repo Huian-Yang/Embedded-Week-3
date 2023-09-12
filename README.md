@@ -33,6 +33,8 @@ $u(t) = K_i\cdot\int^t_0{e(\tau)d\tau} \to u(t) = 2.1(-1.65) = -3.465$
 Now, due purely to integral, our output value is -3.465.
 The integral is meant to be more persistent, as if the error is zero, integral will not shift, and the output from the integral component will be relatively stable. Often, we tune integral with both its coefficient and a max value, so that we don't have an integral that compounds into infinity.
 
+_Note that since we are working with a *discrete* error function we need to use [numerical integration](https://en.wikipedia.org/wiki/Numerical_integration) methods_
+
 ### Derivative
 
 The final aspect of PID is derivative. The output here is based upon the derivative of error. Lets consider an example where the PID controller has values {0, 0, 4.2} (Terrible values in practice).
@@ -46,6 +48,8 @@ Now, we are at 2.6 seconds, observe the green line. The slope of that green line
 $u(t) = K_d\cdot \frac{d}{dt}\left[e\left(t\right)\right] \to u(t) = 4.2(2.48) = 10.416$
 
 The derivative has set our output to be 10.416. Derivative is meant to dampen a PID controller. If the error is moving toward zero, the derivative will add a component to make the error grow, and if the error is growing its component will make it move toward zero. It effectively dampens change.
+
+_Note that since we are working with a *discrete* error function we need to use [numerical differentiation](https://en.wikipedia.org/wiki/Numerical_differentiation) methods_
 
 # Exercise #1
 
