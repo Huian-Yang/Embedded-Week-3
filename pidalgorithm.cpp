@@ -21,7 +21,7 @@ private:
 
     long lastTime; //timestamp of the previous time
     double lastError; //error of previous frame
-    double sumError; //integral of error
+    double errorIntegral; //integral of error
     
     double calculateP(double error); 
     double calculateI(double error);
@@ -56,7 +56,7 @@ double PIDClass::calculateP(double error){
 double PIDClass::calculateI(double error){
     long currentTime = us_ticker_read_test();
     
-    sumError = /*update sumError*/;
+    errorIntegral = /*update errorIntegral*/;
     return /*return I calculation*/;
 }
 
