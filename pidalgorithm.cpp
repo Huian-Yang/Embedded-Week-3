@@ -68,7 +68,7 @@ double PIDClass::calculateI(double error){
 double PIDClass::calculateD(double error){
     long currentTime = us_ticker_read_test();
     
-    double dE = /*calculate derivative of Error*/;
+    double dEdt = /*calculate derivative of Error*/;
     return /*return D calculation*/;
 }
 
