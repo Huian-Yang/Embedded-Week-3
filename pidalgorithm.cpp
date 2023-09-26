@@ -1,7 +1,8 @@
 ///////////////
 //PID.h
 ///////////////
-#include "mbed.h"
+#include <cstdio>
+#include <cstdint>
 
 int t = 1; //fake time reading (real time doesn't work on this sim)
 
@@ -92,7 +93,7 @@ double PIDClass::calculate(double error){
 
 //#include "PID.cpp" //not neccessary here again as we are using one file for everything.
 
-bool debug = true;
+bool debugCode = true;
 
 int main(){
     PIDClass testP(3.2,0,0);
@@ -104,7 +105,7 @@ int main(){
     double errors[25] = {1.34,1.144,0.838,0.425,-0.037,-0.454,-0.751,-0.917,-0.985,-1,-0.993,-0.961,-0.919,-0.838,-0.713,-0.562,-0.408,-0.269,-0.15,-0.052,0.029,0.095,0.151,0.198};
     
     for(int i = 0; i < 25; i ++){
-        if(debug){
+        if(debugCode){
             printf("Results at time %d: P: %f, I: %f D: %f All: %f\n", t,
                 testP.calculate(errors[i]),
                 testI.calculate(errors[i]),
